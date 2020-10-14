@@ -1,3 +1,24 @@
+# Senatos expanses list
+### This web plataform basically, list the expanses of 2019 of Brasilian senators.
+
+# Objectives
+* Improve basics of Angular
+* Work consuming an JSON file from back-end
+* Treat JSON data and display in the page
+* Improve basics of TypeScript
+* Work with interfaces
+* Work with service,pipes and components
+
+![Main Page](https://github.com/Nicholas-nops/Senators-expanses/blob/main/mainpage.PNG)
+
+![Main Page](https://github.com/Nicholas-nops/Senators-expanses/blob/main/senator.PNG)
+
+
+
+
+----------------------------------------------------------------------------------------------------------------------------------------
+
+
 # SenatorsDB
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.4.
