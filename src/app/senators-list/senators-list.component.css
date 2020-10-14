@@ -1,0 +1,13 @@
+.mat-list-item {
+    color: rgb(66, 99, 172);
+    transition: 0.2s;
+}
+
+.mat-list-item:hover {
+    transition: 0.2s;
+    background-color: rgb(231, 225, 225);
+}
+
+.mat-toolbar {
+    background-color: indigo;
+}

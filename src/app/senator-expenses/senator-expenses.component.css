@@ -1,0 +1,57 @@
+.mat-table {
+    align-items: center;
+    text-align: center;
+    display: inline-block;
+    background-color: white;
+}
+
+td {
+    color: rgb(66, 99, 172);
+}
+
+mat-grid-list {
+    align-items: center;
+    text-align: center;
+    display: inline-block;
+}
+
+h2 {
+    color: rgb(66, 99, 172);
+}
+
+.mat-toolbar {
+    background-color: indigo;
+}
+
+.mat-cell {
+    text-align: right;
+}
+
+.type {
+    text-align: left;
+}
+
+.totalValue {
+    text-align: right;
+}
+
+.total {
+    text-align: left;
+}
+
+.container {
+    display: block;
+}
+
+.provider {
+    text-align: left;
+}
+
+.back {
+    background: none;
+    border: none;
+}
+
+mat-icon {
+    color: white;
+}

@@ -1,0 +1,57 @@
+<mat-toolbar>
+    <button class="back" [routerLink]="['']"><mat-icon aria-hidden="false" aria-label="Back">keyboard_backspace</mat-icon></button>
+    <span>Senator {{senatorName}} Expenses informations:</span>
+</mat-toolbar>
+
+<mat-grid-list rowHeight="1:1" class="container">
+    &nbsp;
+    <h2>General expenses</h2>
+    <table mat-table [dataSource]="expensesByType" class="mat-elevation-z8">
+        <ng-container matColumnDef="type">
+            <th mat-header-cell *matHeaderCellDef> Expense type </th>
+            <td mat-cell class="type" *matCellDef="let expense"> {{expense.type | expenseType}} </td>
+            <td mat-footer-cell class="total" *matFooterCellDef>Total</td>
+        </ng-container>
+        <ng-container matColumnDef="value">
+            <th mat-header-cell *matHeaderCellDef> Value </th>
+            <td mat-cell class="totalValue" *matCellDef="let expense"> {{expense.total | currency: 'BRL' : 'symbol': '1.2-2' }} </td>
+            <td mat-footer-cell class="totalValue" *matFooterCellDef>&nbsp;{{handleTotal() | currency: 'BRL' : 'symbol': '1.2-2' }}</td>
+        </ng-container>
+        <tr mat-row *matRowDef="let row; columns: ['type','value'];"></tr>
+        <tr mat-footer-row *matFooterRowDef="['type','value']"></tr>
+    </table>
+    &nbsp;
+    <div class="mat-elevation-z8">
+        <h2>Discriminated expenses</h2>
+        <table mat-table [dataSource]="expenses">
+
+            <!-- Position Column -->
+            <ng-container matColumnDef="type">
+                <th mat-header-cell *matHeaderCellDef> Type of expense </th>
+                <td mat-cell class="type" *matCellDef="let expense"> {{expense.tipo | expenseType}} </td>
+            </ng-container>
+
+            <!-- Name Column -->
+            <ng-container matColumnDef="provider">
+                <th mat-header-cell *matHeaderCellDef> Provider </th>
+                <td mat-cell class="provider" *matCellDef="let expense"> {{expense.fornec}} </td>
+            </ng-container>
+
+            <!-- Weight Column -->
+            <ng-container matColumnDef="date">
+                <th mat-header-cell *matHeaderCellDef> Date </th>
+                <td mat-cell class="provider" *matCellDef="let expense"> {{expense.dia | number: '2.0-0'}}/{{expense.mes | number: '2.0-0'}}/{{expense.ano}} </td>
+            </ng-container>
+
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="value">
+                <th mat-header-cell *matHeaderCellDef>Value</th>
+                <td mat-cell class="provider" *matCellDef="let expense"> {{expense.valor | currency: 'BRL' : 'symbol': '1.2-2' }} </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="['type','provider','date','value']"></tr>
+            <tr mat-row *matRowDef="let row; columns: ['type','provider','date','value']"></tr>
+        </table>
+    </div>
+
+</mat-grid-list>
